@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to Chicken Farm 5 🐔</title>
+<style>
+  :root{--clover:#5a8f3c;--leaf:#3f7a2a;--cream:#fff8e7;--chick:#f2b84b;--brown:#5a3a1e;--dark:#3b2414}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--clover);color:var(--brown);min-height:100vh}
+  header{text-align:center;padding:2rem 1rem 1.2rem;background:linear-gradient(rgba(59,36,20,.15),rgba(59,36,20,.55)),url("chicks.jpg") center/cover no-repeat;min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--cream)}
+  .rooster{font-size:4rem;display:inline-block;animation:bob 1.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+  h1{margin:.3rem 0;font-size:2.1rem;color:var(--cream);text-shadow:2px 2px 6px rgba(0,0,0,.6)}
+  .tag{font-size:1.15rem;color:var(--chick);font-weight:700;text-shadow:1px 1px 4px rgba(0,0,0,.7)}
+  main{max-width:640px;margin:0 auto;padding:0 1rem 3rem}
+  .card{background:var(--cream);border:3px solid var(--chick);border-radius:18px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 6px 0 rgba(0,0,0,.15)}
+  h2{margin-top:0;color:var(--leaf)}
+  a{color:var(--leaf)}
+  ul{padding-left:1.2rem}li{margin:.45rem 0}
+  .fact{font-size:1.05rem;min-height:3em}
+  button{background:var(--chick);color:var(--dark);border:0;border-radius:999px;padding:.7rem 1.4rem;font-size:1rem;font-weight:700;cursor:pointer}
+  button:active{transform:scale(.96)}
+  footer{text-align:center;color:var(--cream);padding:1rem;font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="rooster" role="img" aria-label="rooster">🐓</div>
+  <h1>Welcome to Chicken Farm 5!</h1>
+  <div class="tag">You're clucked in, peep! 🐣 Welcome to the flock.</div>
+</header>
+<main>
+  <section class="card">
+    <h2>🏡 Coop Rules</h2>
+    <ul>
+      <li>🐔 Be kind to the chickens. They were here first.</li>
+      <li>📺 Ask before streaming in 4K. The internet is shared with the whole flock.</li>
+      <li>🌽 No fowl play: keep it legal and friendly online.</li>
+      <li>🔌 Charging spots are first come, first served.</li>
+      <li>🥚 If you find an egg, it's not a router. Please don't reboot it.</li>
+      <li>🚪 Close the coop door behind you!</li>
+    </ul>
+  </section>
+  <section class="card">
+    <h2>🐣 Fun Farm Fact</h2>
+    <p class="fact" id="fact">Tap the button for a farm fact!</p>
+    <button onclick="nextFact()">Cluck for another 🐥</button>
+  </section>
+  <section class="card">
+    <h2>📶 About this Wi-Fi</h2>
+    <p>You're on the guest network: fast for browsing and video, and safely fenced off from the rest of the farm. Your access lasts one day, then just sign in again.</p>
+  </section>
+</main>
+<footer>Made with 🌻 on Chicken Farm 5</footer>
+<script>
+const facts=[
+ "Chickens can remember over 100 different faces, human and chicken alike. 🧠",
+ "A hen lays about one egg a day, and it takes roughly 26 hours to make one. 🥚",
+ "Chickens are the closest living relatives of the T. rex. 🦖",
+ "Chickens dream! They have REM sleep just like we do. 💤",
+ "A chicken can run about 9 miles per hour. Faster than you'd think! 🏃",
+ "Mother hens 'talk' to their chicks while they're still in the egg. 🐣",
+ "There are more chickens on Earth than any other bird. 🌎",
+ "Chickens see more colors than people do, including ultraviolet. 🌈",
+ "The longest recorded chicken flight lasted 13 seconds. Dream big! ✈️"
+];
+let i=Math.floor(Math.random()*facts.length);
+function nextFact(){i=(i+1)%facts.length;document.getElementById('fact').textContent=facts[i];}
+nextFact();
+</script>
+</body>
+</html>
